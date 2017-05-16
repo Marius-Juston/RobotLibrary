@@ -24,6 +24,9 @@ public class OI {
 	private final Joystick right;
 	private final Gamepad gamepad;
 
+	public Button shiftUp;
+	public Button shiftDown;
+
 	/**
 	 * Se3ts the loactions of the joysticks, if -1 is applied the joystic is
 	 * rendered null
@@ -34,10 +37,13 @@ public class OI {
 	 */
 	public OI(final int leftI, final int rightI, final int gamepadI) {
 		left = leftI >= 0 ? new Joystick(leftI) : null;
-		
-	        right = rightI >= 0 ? new Joystick(rightI) : null;
 
-		gamepad = gamepadI >= 0 ? new Joystick(gamepadI) : null;
+		right = rightI >= 0 ? new Joystick(rightI) : null;
+
+		gamepad = gamepadI >= 0 ? new Gamepad(gamepadI) : null;
+
+		shiftUp = new JoystickButton(left, 3);
+		shiftDown = new JoystickButton(left, 2);
 	}
 
 	public Gamepad getGamepad() {
@@ -50,5 +56,21 @@ public class OI {
 
 	public Joystick getRight() {
 		return right;
+	}
+
+	public Button getShiftDown() {
+		return shiftDown;
+	}
+
+	public Button getShiftUp() {
+		return shiftUp;
+	}
+
+	public void setShiftDown(final Button shiftDown) {
+		this.shiftDown = shiftDown;
+	}
+
+	public void setShiftUp(final Button shiftUp) {
+		this.shiftUp = shiftUp;
 	}
 }

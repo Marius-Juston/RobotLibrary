@@ -31,7 +31,9 @@ public class Gamepad extends Joystick {
 
 	/**
 	 *
-	 * @param index the index of the buttons X, A, B, Y, LB, RB, LT, RT, BACK, START, L_STICK, R_STICK indexing are in order
+	 * @param index
+	 *            the index of the buttons X, A, B, Y, LB, RB, LT, RT, BACK,
+	 *            START, L_STICK, R_STICK indexing are in order
 	 *
 	 * @return true if button pressed false if not pressed
 	 *
@@ -50,7 +52,7 @@ public class Gamepad extends Joystick {
 	 */
 
 	public double getLeftTrigger() {
-		return getRawAxis(Button.LT.getIndex()); //TODO check if this works
+		return getRawAxis(Button.LT.getIndex()); // TODO check if this works
 	}
 
 	/**
@@ -100,7 +102,7 @@ public class Gamepad extends Joystick {
 	 */
 
 	public double getRightTrigger() {
-		return getRawAxis(Button.RT.getIndex()); //TODO check if this works
+		return getRawAxis(Button.RT.getIndex()); // TODO check if this works
 	}
 
 	/**

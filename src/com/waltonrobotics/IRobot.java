@@ -12,8 +12,6 @@ public abstract class IRobot extends IterativeRobot {
 	private static final PoseEstimator poseEstimator = new PoseEstimator();
 	private static final Drivetrain drivetrain = new Drivetrain();
 	private static OI oi;
-	
-	public abstract void OiInit(); 
 
 	public static Drivetrain getDrivetrain() {
 		return drivetrain;
@@ -45,11 +43,13 @@ public abstract class IRobot extends IterativeRobot {
 
 	public abstract void displaySmartDashboardValues();
 
+	public abstract void OiInit();
+
 	@Override
 	public void robotInit() {
 		super.robotInit();
 
-		RobotMap.init();
+		IRobotMap.init();
 		Scheduler.getInstance().run();
 
 		createTestButtons();

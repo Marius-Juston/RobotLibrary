@@ -1,6 +1,6 @@
 package com.waltonrobotics.subsystems;
 
-import com.waltonrobotics.RobotMap;
+import com.waltonrobotics.IRobotMap;
 import com.waltonrobotics.controllers.Point2D;
 import com.waltonrobotics.controllers.Pose;
 import com.waltonrobotics.controllers.PoseProvider;
@@ -15,8 +15,8 @@ public class PoseEstimator extends Subsystem implements PoseProvider {
 	private static final double distancePerPulse = 0.0005814; // Pracice bot
 	// private static final double wheelDistance = .70485; // practice bot
 
-	private final Encoder encoderLeft = RobotMap.getEncoderLeft();
-	private final Encoder encoderRight = RobotMap.getEncoderRight();
+	private final Encoder encoderLeft = IRobotMap.getEncoderLeft();
+	private final Encoder encoderRight = IRobotMap.getEncoderRight();
 	// private RobotPair wheelPositions;
 	private double angle;
 	private Point2D X;

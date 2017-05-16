@@ -64,30 +64,27 @@ public abstract class IRobotMap {
 	}
 
 	public static void setEncoderLeft(final Encoder encoderLeft) {
-		RobotMap.encoderLeft = encoderLeft;
+		IRobotMap.encoderLeft = encoderLeft;
 	}
 
 	public static void setEncoderRight(final Encoder encoderRight) {
-		RobotMap.encoderRight = encoderRight;
+		IRobotMap.encoderRight = encoderRight;
 	}
 
-	/**
-	 * @param intake
-	 *            the intake to set
-	 */
 	public static void setIntake(final Talon intake) {
-		RobotMap.intake = intake;
+		IRobotMap.intake = intake;
 	}
 
 	public static void setLeft(final Talon left) {
-		RobotMap.left = left;
+		IRobotMap.left = left;
 	}
 
 	public static void setPneumaticsShifter(final Solenoid pneumaticsShifter) {
-		RobotMap.pneumaticsShifter = pneumaticsShifter;
+		IRobotMap.pneumaticsShifter = pneumaticsShifter;
 	}
 
 	public static void setRight(final Talon right) {
-		RobotMap.right = right;
+		IRobotMap.right = right;
 	}
+
 }

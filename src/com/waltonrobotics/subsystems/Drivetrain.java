@@ -1,7 +1,7 @@
 package com.waltonrobotics.subsystems;
 
 import com.waltonrobotics.IRobot;
-import com.waltonrobotics.RobotMap;
+import com.waltonrobotics.IRobotMap;
 import com.waltonrobotics.command.Drive;
 import com.waltonrobotics.controllers.MotionProfileController;
 import com.waltonrobotics.controllers.MotionProvider;
@@ -24,10 +24,10 @@ public class Drivetrain extends Subsystem {
 	private static final double DEFAULTKA = 0.1;
 	private static final double DEFAULTKP = 20;
 
-	private final Talon right = RobotMap.getRight();
+	private final Talon right = IRobotMap.getRight();
 
-	private final Talon left = RobotMap.getLeft();
-	private final Solenoid shifter = RobotMap.getPneumaticsShifter();
+	private final Talon left = IRobotMap.getLeft();
+	private final Solenoid shifter = IRobotMap.getPneumaticsShifter();
 	private Driver driver;
 	private final MotionProfileController controller;
 
