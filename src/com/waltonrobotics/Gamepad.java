@@ -14,12 +14,11 @@ public class Gamepad extends Joystick {
 	 *
 	 */
 	public enum Button {
-		A(1), B(2), X(3), Y(4), L(5), R(6), BACK(7), START(8);
+		X, A, B, Y, LB, RB, LT, RT, BACK, START, L_STICK, R_STICK;
 
-		private int index;
-
-		private Button(final int index) {
-			this.index = index;
+		public int getIndex()
+		{
+			return ordinal();
 		}
 	}
 
@@ -56,12 +55,12 @@ public class Gamepad extends Joystick {
 	 */
 
 	public double getLeftTrigger() {
-		return getRawAxis(2);
+		return getRawAxis(Button.LT.getIndex());
 	}
 
 	/**
 	 *
-	 * left is 1 right is -1 //TODO check this
+	 * left is 1 right is -1
 	 *
 	 * @return the left thumb stick x value between -1 and 1
 	 *
@@ -73,7 +72,7 @@ public class Gamepad extends Joystick {
 
 	/**
 	 *
-	 * forward is -1 and backward is 1 //TODO check this
+	 * forward is -1 and backward is 1
 	 *
 	 * @return the left thumb stick y value between -1 and 1
 	 *
@@ -94,7 +93,7 @@ public class Gamepad extends Joystick {
 	 */
 
 	boolean getPressed(final Button b) {
-		return getRawButton(b.index);
+		return getRawButton(b.getIndex());
 	}
 
 	/**
@@ -106,19 +105,19 @@ public class Gamepad extends Joystick {
 	 */
 
 	public double getRightTrigger() {
-		return getRawAxis(3);
+		return getRawAxis(Button.RT.getIndex());
 	}
 
 	/**
 	 *
-	 * left is 1 right is -1 //TODO check this
+	 * left is 1 right is -1
 	 *
 	 * @return the right thumb stick x value between -1 and 1
 	 *
 	 */
 
 	public double getRightX() {
-		return getRawAxis(4);
+		return getRawAxis(2);
 	}
 
 	/**
