@@ -88,7 +88,7 @@ public class Drivetrain extends Subsystem {
 	}
 
 	public void setDriver() {
-		driver = convertedDriver(Preferences.getInstance().getString("drivetrain.driver", "Robert"));
+		driver = convertedDriver(IRobot.getPreferences().getString("drivetrain.driver", "Robert"));
 	}
 
 	public synchronized void setSpeeds(final double leftSpeed, final double rightSpeed) {
