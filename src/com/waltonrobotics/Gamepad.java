@@ -16,8 +16,7 @@ public class Gamepad extends Joystick {
 	public enum Button {
 		X, A, B, Y, LB, RB, LT, RT, BACK, START, L_STICK, R_STICK;
 
-		public int getIndex()
-		{
+		public int getIndex() {
 			return ordinal();
 		}
 	}
@@ -32,11 +31,7 @@ public class Gamepad extends Joystick {
 
 	/**
 	 *
-	 * @param index
-	 *            the index of the button
-	 *
-	 *            A( 0 ), B( 1 ), X( 2 ), Y( 3 ), L( 7 ), R( 8 ), BACK( 9 ),
-	 *            START( 10 );
+	 * @param index the index of the buttons X, A, B, Y, LB, RB, LT, RT, BACK, START, L_STICK, R_STICK indexing are in order
 	 *
 	 * @return true if button pressed false if not pressed
 	 *
@@ -55,7 +50,7 @@ public class Gamepad extends Joystick {
 	 */
 
 	public double getLeftTrigger() {
-		return getRawAxis(Button.LT.getIndex());
+		return getRawAxis(Button.LT.getIndex()); //TODO check if this works
 	}
 
 	/**
@@ -105,7 +100,7 @@ public class Gamepad extends Joystick {
 	 */
 
 	public double getRightTrigger() {
-		return getRawAxis(Button.RT.getIndex());
+		return getRawAxis(Button.RT.getIndex()); //TODO check if this works
 	}
 
 	/**
