@@ -11,7 +11,9 @@ public abstract class IRobot extends IterativeRobot {
 	private static final Preferences preferences = Preferences.getInstance();
 	private static final PoseEstimator poseEstimator = new PoseEstimator();
 	private static final Drivetrain drivetrain = new Drivetrain();
-	private static final OI oi = new OI(0, -1, 2);
+	private static OI oi;
+	
+	public abstract void OiInit(); 
 
 	public static Drivetrain getDrivetrain() {
 		return drivetrain;
@@ -45,7 +47,6 @@ public abstract class IRobot extends IterativeRobot {
 
 	@Override
 	public void robotInit() {
-
 		super.robotInit();
 
 		RobotMap.init();
