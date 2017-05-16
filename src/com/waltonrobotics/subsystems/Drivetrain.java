@@ -2,6 +2,7 @@ package com.waltonrobotics.subsystems;
 
 import com.waltonrobotics.IRobot;
 import com.waltonrobotics.RobotMap;
+import com.waltonrobotics.command.Drive;
 import com.waltonrobotics.controllers.MotionProfileController;
 import com.waltonrobotics.controllers.MotionProvider;
 
@@ -14,9 +15,7 @@ import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 public class Drivetrain extends Subsystem {
 
 	public enum Driver {
-		Robert,
-		Tank,
-		Cheesy 
+		Robert, Tank, Cheesy
 	}
 
 	private static final double PERIOD = .005;
@@ -28,7 +27,7 @@ public class Drivetrain extends Subsystem {
 	private final Talon right = RobotMap.getRight();
 
 	private final Talon left = RobotMap.getLeft();
-	private Solenoid shifter = RobotMap.getPneumaticsShifter();
+	private final Solenoid shifter = RobotMap.getPneumaticsShifter();
 	private Driver driver;
 	private final MotionProfileController controller;
 
@@ -79,7 +78,8 @@ public class Drivetrain extends Subsystem {
 		final double kK = pref.getDouble("drivetrain.kK", DEFAULTKK);
 		final double kA = pref.getDouble("drivetrain.kA", DEFAULTKA);
 		final double kP = pref.getDouble("drivetrain.kP", DEFAULTKP);
-//		System.out.println(String.format("kV=%f, kK=%f, kA=%f, kP=%f", kV, kK, kA, kP));
+		// System.out.println(String.format("kV=%f, kK=%f, kA=%f, kP=%f", kV,
+		// kK, kA, kP));
 		controller.setKV(kV);
 		controller.setKK(kK);
 		controller.setKA(kA);
@@ -101,7 +101,7 @@ public class Drivetrain extends Subsystem {
 			shifter.set(true);
 			return true;
 		}
-		
+
 		return false;
 	}
 
@@ -113,7 +113,7 @@ public class Drivetrain extends Subsystem {
 		return false;
 	}
 
-	public synchronized  void startMotion() {
+	public synchronized void startMotion() {
 		controller.enable();
 	}
 }

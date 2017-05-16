@@ -1,5 +1,6 @@
 package com.waltonrobotics;
 
+import com.waltonrobotics.subsystems.Drivetrain;
 import com.waltonrobotics.subsystems.PoseEstimator;
 
 import edu.wpi.first.wpilibj.IterativeRobot;
@@ -9,6 +10,16 @@ import edu.wpi.first.wpilibj.command.Scheduler;
 public abstract class IRobot extends IterativeRobot {
 	private static final Preferences preferences = Preferences.getInstance();
 	private static final PoseEstimator poseEstimator = new PoseEstimator();
+	private static final Drivetrain drivetrain = new Drivetrain();
+	private static final OI oi = new OI(0, -1, 2);
+
+	public static Drivetrain getDrivetrain() {
+		return drivetrain;
+	}
+
+	public static OI getOi() {
+		return oi;
+	}
 
 	public static PoseEstimator getPoseEstimator() {
 		return poseEstimator;
@@ -39,7 +50,7 @@ public abstract class IRobot extends IterativeRobot {
 
 		RobotMap.init();
 		Scheduler.getInstance().run();
-		
+
 		createTestButtons();
 	}
 

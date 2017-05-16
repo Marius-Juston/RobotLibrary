@@ -6,7 +6,7 @@ public class KinematicPose extends Pose {
 		final Pose pose = Pose.interpolate(pose0, p, pose1, q);
 		final KinematicState left = KinematicState.interpolate(pose0.getLeft(), p, pose1.getLeft(), q);
 		final KinematicState right = KinematicState.interpolate(pose0.getRight(), p, pose1.getRight(), q);
-		return new KinematicPose(pose, left, right, p * pose0.t + q * pose1.t, false);
+		return new KinematicPose(pose, left, right, p * pose0.getT() + q * pose1.getT(), false);
 	}
 
 	private final KinematicState left;
@@ -28,16 +28,6 @@ public class KinematicPose extends Pose {
 		return (getLeft().l + getRight().l) / 2.0;
 	}
 
-	public double getVCenter() {
-		return (getLeft().v + getRight().v) / 2.0;
-	}
-
-	@Override
-	public String toString() {
-		return String.format("%s, left:%s, right:%s, t=%f, isFinished=%s", super.toString(), getLeft(), getRight(), t,
-				isFinished());
-	}
-
 	public KinematicState getLeft() {
 		return left;
 	}
@@ -46,7 +36,21 @@ public class KinematicPose extends Pose {
 		return right;
 	}
 
+	public double getT() {
+		return t;
+	}
+
+	public double getVCenter() {
+		return (getLeft().v + getRight().v) / 2.0;
+	}
+
 	public boolean isFinished() {
 		return isFinished;
+	}
+
+	@Override
+	public String toString() {
+		return String.format("%s, left:%s, right:%s, t=%f, isFinished=%s", super.toString(), getLeft(), getRight(),
+				getT(), isFinished());
 	}
 }

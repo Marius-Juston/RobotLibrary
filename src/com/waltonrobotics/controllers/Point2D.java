@@ -10,8 +10,8 @@ public class Point2D {
 	private double y;
 
 	public Point2D(final double x, final double y) {
-		this.setX(x);
-		this.setY(y);
+		setX(x);
+		setY(y);
 	}
 
 	// Calculates distance between two points
@@ -21,28 +21,28 @@ public class Point2D {
 		return Math.sqrt(deltaX + deltaY);
 	}
 
-	public Point2D offsetPoint(final double l, final double angle) {
-		return new Point2D(getX() + l * Math.cos(angle), getY() + l * Math.sin(angle));
-	}
-
-	@Override
-	public String toString() {
-		return String.format("x=%f, y=%f", getX(), getY());
-	}
-
 	public double getX() {
 		return x;
-	}
-
-	public void setX(double x) {
-		this.x = x;
 	}
 
 	public double getY() {
 		return y;
 	}
 
-	public void setY(double y) {
+	public Point2D offsetPoint(final double l, final double angle) {
+		return new Point2D(getX() + l * Math.cos(angle), getY() + l * Math.sin(angle));
+	}
+
+	public void setX(final double x) {
+		this.x = x;
+	}
+
+	public void setY(final double y) {
 		this.y = y;
+	}
+
+	@Override
+	public String toString() {
+		return String.format("x=%f, y=%f", getX(), getY());
 	}
 }

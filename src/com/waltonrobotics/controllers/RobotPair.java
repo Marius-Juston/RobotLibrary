@@ -10,6 +10,14 @@ public class RobotPair {
 		this.right = right;
 	}
 
+	public double getLeft() {
+		return left;
+	}
+
+	public double getRight() {
+		return right;
+	}
+
 	public double mean() {
 		return (getLeft() + getRight()) / 2;
 	}
@@ -17,14 +25,6 @@ public class RobotPair {
 	@Override
 	public String toString() {
 		return String.format("%f, %f", getLeft(), getRight());
-	}
-
-	public double getLeft() {
-		return left;
-	}
-
-	public double getRight() {
-		return right;
 	}
 
 }

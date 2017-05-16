@@ -13,11 +13,11 @@ import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 public class PoseEstimator extends Subsystem implements PoseProvider {
 
 	private static final double distancePerPulse = 0.0005814; // Pracice bot
-//	private static final double wheelDistance = .70485; // practice bot
+	// private static final double wheelDistance = .70485; // practice bot
 
 	private final Encoder encoderLeft = RobotMap.getEncoderLeft();
 	private final Encoder encoderRight = RobotMap.getEncoderRight();
-//	private RobotPair wheelPositions;
+	// private RobotPair wheelPositions;
 	private double angle;
 	private Point2D X;
 
@@ -30,7 +30,8 @@ public class PoseEstimator extends Subsystem implements PoseProvider {
 			encoderLeft.setDistancePerPulse(distancePerPulse);
 			encoderRight.setDistancePerPulse(-distancePerPulse);
 			reset();
-//			wheelPositions = new RobotPair(encoderLeft.getDistance(), encoderRight.getDistance());
+			// wheelPositions = new RobotPair(encoderLeft.getDistance(),
+			// encoderRight.getDistance());
 
 		}
 

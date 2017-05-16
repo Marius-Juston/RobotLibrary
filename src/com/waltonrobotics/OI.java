@@ -11,6 +11,8 @@
 package com.waltonrobotics;
 
 import edu.wpi.first.wpilibj.Joystick;
+import edu.wpi.first.wpilibj.buttons.Button;
+import edu.wpi.first.wpilibj.buttons.JoystickButton;
 
 /**
  * This class is the glue that binds the controls on the physical operator
@@ -21,6 +23,9 @@ public class OI {
 	private final Joystick left;
 	private final Joystick right;
 	private final Gamepad gamepad;
+
+	private final Button shiftUp;
+	private final Button shiftDown;
 
 	/**
 	 * Se3ts the loactions of the joysticks, if -1 is applied the joystic is
@@ -47,6 +52,29 @@ public class OI {
 		} else {
 			gamepad = null;
 		}
+
+		shiftUp = new JoystickButton(left, 3);
+		shiftDown = new JoystickButton(left, 2);
+	}
+
+	public Gamepad getGamepad() {
+		return gamepad;
+	}
+
+	public Joystick getLeft() {
+		return left;
+	}
+
+	public Joystick getRight() {
+		return right;
+	}
+
+	public Button getShiftDown() {
+		return shiftDown;
+	}
+
+	public Button getShiftUp() {
+		return shiftUp;
 	}
 
 }

@@ -43,7 +43,7 @@ public class MotionProfileController {
 
 	public synchronized void addMotion(final MotionProvider motion) {
 		motions.addLast(motion);
-//		System.out.println("added motion" + motion.toString());
+		// System.out.println("added motion" + motion.toString());
 	}
 
 	private void calculate() {
