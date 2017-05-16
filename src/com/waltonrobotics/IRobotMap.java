@@ -11,7 +11,7 @@ import edu.wpi.first.wpilibj.Talon;
  * the wiring easier and significantly reduces the number of magic numbers
  * floating around.
  */
-public abstract class RobotMap {
+public abstract class IRobotMap {
 
 	protected static Talon left;
 	protected static Talon right;
